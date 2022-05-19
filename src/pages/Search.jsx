@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
+import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends Component {
   state = {
     isSearchButtonDisabled: true,
-    name: '',
+    nameArtist: '',
+    loading: false,
+    todasMusicas: [],
   }
 
   onInputChange = ({ target }) => {
@@ -17,38 +20,50 @@ class Search extends Component {
   }
 
   validacaoCaracts = () => {
-    const { name } = this.state;
+    const { nameArtist } = this.state;
     const minLengthCaracts = 2;
-    if (name.length >= minLengthCaracts) {
+    if (nameArtist.length >= minLengthCaracts) {
       return this.setState({ isSearchButtonDisabled: false });
     }
     return this.setState({ isSearchButtonDisabled: true });
   }
 
-  render() {
-    const { isSearchButtonDisabled, name } = this.state;
+  onSearchButtonClick = async (event) => {
+    const { nameArtist } = this.state;
+    event.preventDefault();
+    // this.setState({ loading: true });
+    const nomeDoArtista = nameArtist;
+    const albumProcura = await searchAlbumsAPI({ nomeDoArtista });
+    this.setState({ todasMusicas: albumProcura });
+  }
 
+  render() {
+    const { isSearchButtonDisabled, nameArtist } = this.state;
+
+    // if (loading) {
+    //   return <div>Carregando...</div>;
+    // }
     return (
       <div data-testid="page-search">
         <Header />
         <form>
-          <label htmlFor="name-artist">
+          <label htmlFor="nameArtist">
             Nome do Artista:
             <input
-              id="name-artist"
-              name="name-artist"
+              id="nameArtist"
+              name="nameArtist"
               type="text"
               data-testid="search-artist-input"
               maxLength={ 40 }
-              onChange={ this.handleChange }
-              value={ name }
+              onChange={ this.onInputChange }
+              value={ nameArtist }
             />
           </label>
           { ' ' }
           <button
             data-testid="search-artist-button"
             type="submit"
-            // onClick={ this.onEnterButtonClick }
+            onClick={ this.onSearchButtonClick }
             disabled={ isSearchButtonDisabled }
           >
             Pesquisar
