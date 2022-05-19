@@ -31,11 +31,9 @@ class Login extends Component {
   onEnterButtonClick = (event) => {
     const { name } = this.state;
     event.preventDefault();
-    console.log('funciona');
     this.setState({ loading: true });
     createUser({ name })
       .then(() => {
-        console.log('chamou');
         this.setState({ loading: false, redirect: true });
       });
   }
