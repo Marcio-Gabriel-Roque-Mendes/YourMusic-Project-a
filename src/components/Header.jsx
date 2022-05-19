@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
 
 class Header extends Component {
@@ -23,7 +23,7 @@ class Header extends Component {
       return <div>Carregando...</div>;
     }
     return (
-      <BrowserRouter>
+      <header data-testid="header-component">
         <nav>
           {/* <Link to="/">Home </Link> */}
           <Link to="/profile" data-testid="link-to-profile">User </Link>
@@ -32,15 +32,12 @@ class Header extends Component {
           {' '}
           <Link to="/favorites" data-testid="link-to-favorites">Musicas Favoritas </Link>
         </nav>
-        <br />
-        <header data-testid="header-component">
-          <p>
-            User
-            {' '}
-            {user}
-          </p>
-        </header>
-      </BrowserRouter>
+        <p data-testid="header-user-name">
+          User
+          {' '}
+          {user}
+        </p>
+      </header>
     );
   }
 }

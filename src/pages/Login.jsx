@@ -10,7 +10,7 @@ class Login extends Component {
     redirect: false,
   }
 
-  handleChange = ({ target }) => {
+  onInputChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
 
@@ -58,7 +58,7 @@ class Login extends Component {
               type="text"
               data-testid="login-name-input"
               maxLength={ 40 }
-              onChange={ this.handleChange }
+              onChange={ this.onInputChange }
               value={ name }
             />
           </label>
