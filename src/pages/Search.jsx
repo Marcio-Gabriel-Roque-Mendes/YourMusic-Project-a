@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import searchAlbumsAPI from '../services/searchAlbumsAPI';
+// import searchAlbumsAPI from '../services/searchAlbumsAPI';
 
 class Search extends Component {
   state = {
     isSearchButtonDisabled: true,
     nameArtist: '',
-    loading: false,
-    todasMusicas: [],
+    // loading: false,
+    // todasMusicas: [],
   }
 
   onInputChange = ({ target }) => {
@@ -28,14 +28,14 @@ class Search extends Component {
     return this.setState({ isSearchButtonDisabled: true });
   }
 
-  onSearchButtonClick = async (event) => {
-    const { nameArtist } = this.state;
-    event.preventDefault();
-    // this.setState({ loading: true });
-    const nomeDoArtista = nameArtist;
-    const albumProcura = await searchAlbumsAPI({ nomeDoArtista });
-    this.setState({ todasMusicas: albumProcura });
-  }
+  // onSearchButtonClick = async (event) => {
+  //   const { nameArtist } = this.state;
+  //   event.preventDefault();
+  //   // this.setState({ loading: true });
+  //   const nomeDoArtista = nameArtist;
+  //   const albumProcura = await searchAlbumsAPI({ nomeDoArtista });
+  //   this.setState({ todasMusicas: albumProcura });
+  // }
 
   render() {
     const { isSearchButtonDisabled, nameArtist } = this.state;
