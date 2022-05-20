@@ -33,7 +33,6 @@ class Header extends Component {
           <Link to="/favorites" data-testid="link-to-favorites">Musicas Favoritas </Link>
         </nav>
         <p data-testid="header-user-name">
-          User
           {' '}
           {user}
         </p>
