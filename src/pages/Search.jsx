@@ -51,7 +51,9 @@ class Search extends Component {
         to={ `/album/${album.collectionId}` }
         data-testid={ `link-to-album-${album.collectionId}` }
       >
-        User
+        <img src={ album.artworkUrl100 } alt={ album.artistName } />
+
+        Prévia
         {' '}
 
       </Link>
