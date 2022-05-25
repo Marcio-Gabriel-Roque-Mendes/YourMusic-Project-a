@@ -20,6 +20,7 @@ class MusicCard extends Component {
   }
 
   onListFavoriteChange = async ({ target }) => {
+    this.setState({ loading: true });
     const { trackId } = this.props;
     const { checked } = target;
     const { favoritesSongs } = this.state;
@@ -32,12 +33,14 @@ class MusicCard extends Component {
     if (checked) {
       await addSong(pegaMusicaFavorita);
       this.setState({ favoritesSongs: [...favoritesSongs, pegaMusicaFavorita] });
+      this.setState({ loading: false });
     }
     if (checked === false) {
       await removeSong(trackId);
       const CurrentFavorites = favoritesSongs
         .filter((musica) => musica.trackId !== trackId);
       this.setState({ favoritesSongs: CurrentFavorites });
+      this.setState({ loading: false });
     }
   }
 
