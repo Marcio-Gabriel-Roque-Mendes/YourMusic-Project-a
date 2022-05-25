@@ -21,10 +21,6 @@ class Album extends Component {
     });
   }
 
-  // estruturarCadaMusica = (musicas) => musicas.filter((songTrackId) => songTrackId.trackId)
-  // .map((musica) => (
-  //   ))
-
   render() {
     const { pegaMusicas, qualquer } = this.state;
     return (
@@ -50,10 +46,8 @@ class Album extends Component {
     );
   }
 }
-
 Album.propTypes = {
   match: PropTypes.shape({ params: PropTypes
     .shape({ id: PropTypes.string }) }).isRequired,
 };
-
 export default Album;
