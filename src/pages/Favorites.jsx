@@ -32,7 +32,11 @@ class Favorites extends React.Component {
     return (
       <div data-testid="page-favorites" className="bg-violet-100">
         <Header />
-        <p data-testid="header-user-name" className="mb-4 text-fuchsia-800 font-bold bg-violet-100 text-xl">
+        <p
+          data-testid="header-user-name"
+          className="mb-4 text-fuchsia-800 font-bold
+        bg-violet-100 text-xl"
+        >
           {' '}
           {`Boas-vindas, ${user}`}
         </p>

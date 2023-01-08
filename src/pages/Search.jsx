@@ -5,6 +5,7 @@ import { Link /* Route */ } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 // import '../albunsList.css'
+import LoadingThree from '../components/LoadingThree';
 
 const moment = require('moment'); // require moment().format();
 
@@ -132,10 +133,8 @@ class Search extends Component {
     const { isSearchButtonDisabled,
       nameArtist, loading, nomeArtistaPosterior, todasMusicas } = this.state;
 
-    const condicicaoLoading = loading ? <div className="bg-violet-100 text-purple-700">
-      Carregando...
-    </div> : (
-      <form className="flex justify-center mb-2.5 mt-20 text-indigo-800">
+    const condicicaoLoading = loading ? <LoadingThree /> : (
+      <form className="flex justify-center mb-2.5 mt-10 text-indigo-800">
         <label htmlFor="nameArtist" className="flex flex-row">
           <div className="text-2xl xl font-bold">
             Nome do Artista:

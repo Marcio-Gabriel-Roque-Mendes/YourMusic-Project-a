@@ -72,10 +72,10 @@ class MusicCard extends Component {
     const condicionalLoading = loading && <div>Carregando...</div>;
     const condicioanlCarregando = carregando && <div>Carregando...</div>;
     return (
-      <div>
+      <div className="flex justify-center">
         {condicionalLoading}
         {condicioanlCarregando}
-        <div className="mb-16 flex flex-col">
+        <div className="mb-12 flex flex-col border-solid border-4 border-black-600">
           {/* <img src={ artworkUrl100 } alt="artwork da imagem" /> */}
           <span className="text-violet-700 font-bold mb-1 text-2xl">{ trackName }</span>
           <audio data-testid="audio-component" src={ previewUrl } controls>
