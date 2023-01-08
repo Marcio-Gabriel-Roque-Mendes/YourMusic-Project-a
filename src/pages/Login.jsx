@@ -84,6 +84,8 @@ class Login extends Component {
                     maxLength={ 40 }
                     onChange={ this.onInputChange }
                     value={ name }
+                    autoComplete="off"
+                    placeholder="Nome"
                     className=" text-center block bg-gray-200 border-2 rounded border-violet-900"
                   />
                 </label>
