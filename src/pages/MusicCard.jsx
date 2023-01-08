@@ -45,7 +45,7 @@ class MusicCard extends Component {
   }
 
   render() {
-    const { previewUrl, trackName, trackId, artworkUrl100 } = this.props;
+    const { previewUrl, trackName, trackId /* artworkUrl100 */ } = this.props;
     const { loading, favoritesSongs, carregando } = this.state;
 
     const condicionalLoading = loading && <div>Carregando...</div>;
@@ -54,9 +54,9 @@ class MusicCard extends Component {
       <div>
         {condicionalLoading}
         {condicioanlCarregando}
-        <div>
-          <img src={ artworkUrl100 } alt="artwork da imagem" />
-          <span>{ trackName }</span>
+        <div className="mb-16 flex flex-col">
+          {/* <img src={ artworkUrl100 } alt="artwork da imagem" /> */}
+          <span className="text-violet-700 font-bold mb-1 text-2xl">{ trackName }</span>
           <audio data-testid="audio-component" src={ previewUrl } controls>
             <track kind="captions" />
             O seu navegador não suporta o elemento
@@ -64,8 +64,10 @@ class MusicCard extends Component {
             <code>audio</code>
             .
           </audio>
-          <label htmlFor="favorita">
-            Favorita
+          <label htmlFor="favorita" className="flex flex-row text-violet-800">
+            <p className="mr-1.5 mt-1.5">
+              Favoritar
+            </p>
             <input
               type="checkbox"
               name="favorita"
