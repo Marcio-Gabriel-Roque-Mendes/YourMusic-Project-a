@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable react/jsx-max-depth */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { createUser } from '../services/userAPI';
@@ -60,9 +62,28 @@ class Login extends Component {
 
           <main>
             <div>
-            <h1 className='mt-5 mb-5 text-center text-3xl text-purple-900'>
-              LOGIN
-            </h1>
+              <h1 className="mt-5 mb-5 text-center text-3xl text-purple-900">
+                LOGIN
+              </h1>
+
+              <form>
+                <label htmlFor="name" className="block text-center">
+                  <p className="text-indigo-900">
+                    Nome de usuário:
+                  </p>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    data-testid="login-name-input"
+                    maxLength={ 40 }
+                    onChange={ this.onInputChange }
+                    value={ name }
+                    className=" text-center block bg-gray-200 border-2 rounded border-violet-900"
+                  />
+                </label>
+                <br />
+              </form>
             </div>
           </main>
         </section>
