@@ -49,7 +49,7 @@ class Login extends Component {
     }
     return (
       <div data-testid="page-login">
-        <section>
+        <section className="flex flex-col items-center justify-center ">
           <header>
             <h1 className="text-6xl my-5 text-purple-800">
               {/* <img src={imageMusica} alt="Logo de nota musical" />  */}
@@ -57,6 +57,14 @@ class Login extends Component {
             </h1>
             <hr />
           </header>
+
+          <main>
+            <div>
+            <h1 className='mt-5 mb-5 text-center text-3xl text-purple-900'>
+              LOGIN
+            </h1>
+            </div>
+          </main>
         </section>
       </div>
     );
