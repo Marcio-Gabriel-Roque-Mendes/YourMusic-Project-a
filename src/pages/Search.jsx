@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Link /* Route */ } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
+// import '../albunsList.css'
+
+const moment = require('moment'); // require moment().format();
 
 class Search extends Component {
   state = {
@@ -94,9 +97,10 @@ class Search extends Component {
         ,
       </h4>
       <h4 key={ album.releaseDate }>
-        releaseDate:
+        Lançado em:
         {' '}
-        {album.releaseDate}
+        {moment(album.releaseDate).format('DD/MM/YYYY')}
+        {/* {moment(album.releaseDate).format('DD/MM/YYYY')} */}
         ,
       </h4>
       <h4 key={ album.trackCount }>
