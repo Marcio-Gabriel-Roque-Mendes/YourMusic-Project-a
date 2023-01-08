@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import Album from '../components/Header';
 import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
-import getMusics from '../services/musicsAPI';
+// import getMusics from '../services/musicsAPI';
 
 class MusicCard extends Component {
   state = {
     loading: false,
     favoritesSongs: [],
     carregando: false,
+    isFavorite: false,
+    listOfSongs: [],
   }
 
   async componentDidMount() {
