@@ -49,14 +49,27 @@ class Search extends Component {
   }
 
   estruturarCadaAlbum = (albuns) => albuns.map((album) => (
-    <div key={ album.collectionName }>
+    <div
+      key={ album.collectionName }
+      className="w-52 text-center content-center border-solid border-4
+      border-black-600 mx-2 my-3 rounded text-fuchsia-900 "
+    >
       <Link
         to={ `/album/${album.collectionId}` }
         data-testid={ `link-to-album-${album.collectionId}` }
       >
-        <img src={ album.artworkUrl100 } alt={ album.artistName } />
+        <img
+          src={ album.artworkUrl100 }
+          alt={ album.artistName }
+          className="w-52 rounded"
+        />
 
-        Prévia
+        <p
+          className="bg-indigo-700 hover:bg-indigo-500 text-white
+        font-bold py-1 px-1 my-3 rounded-full"
+        >
+          Musicas
+        </p>
         {' '}
 
       </Link>
