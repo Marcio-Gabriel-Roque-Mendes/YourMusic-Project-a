@@ -83,6 +83,17 @@ class Login extends Component {
                   />
                 </label>
                 <br />
+
+                <button
+                  data-testid="login-submit-button"
+                  type="submit"
+                  onClick={ this.onEnterButtonClick }
+                  disabled={ isEnterButtonDisabled }
+                  className="block bg-fuchsia-700 min-w-full rounded-xl text-white font-bold"
+                >
+                  Entrar
+                </button>
+
               </form>
             </div>
           </main>
