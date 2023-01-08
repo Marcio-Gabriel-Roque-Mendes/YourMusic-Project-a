@@ -5,7 +5,7 @@ class LoadingFour extends React.Component {
   render() {
     return (
       <div className="loading">
-        <img src={ loadingFourGIF } alt="carregando" className="w-44" />
+        <img src={ loadingFourGIF } alt="carregando" className="w-48" />
       </div>
     );
   }

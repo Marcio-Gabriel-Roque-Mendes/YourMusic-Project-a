@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 // import Album from '../components/Header';
 import { addSong, removeSong, getFavoriteSongs } from '../services/favoriteSongsAPI';
-// import getMusics from '../services/musicsAPI';
+import LoadingTwo from '../components/LoadingTwo';// import getMusics from '../services/musicsAPI';
 
 class MusicCard extends Component {
   state = {
     loading: false,
     favoritesSongs: [],
     carregando: false,
-    isFavorite: false,
-    listOfSongs: [],
+    // isFavorite: false,
+    // listOfSongs: [],
   }
 
   async componentDidMount() {
@@ -69,10 +69,10 @@ class MusicCard extends Component {
     const { previewUrl, trackName, trackId /* artworkUrl100 */ } = this.props;
     const { loading, favoritesSongs, carregando } = this.state;
 
-    const condicionalLoading = loading && <div>Carregando...</div>;
+    const condicionalLoading = loading && <LoadingTwo />;
     const condicioanlCarregando = carregando && <div>Carregando...</div>;
     return (
-      <div className="flex justify-center">
+      <div className="flex justify-center content-center'">
         {condicionalLoading}
         {condicioanlCarregando}
         <div className="mb-12 flex flex-col border-solid border-4 border-black-600">

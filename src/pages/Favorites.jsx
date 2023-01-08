@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
-import LoadingOne from '../components/LoadingOne';
+import LoadingFour from '../components/LoadingFour';
 import MusicCard from './MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 import { getUser } from '../services/userAPI';
@@ -43,7 +43,7 @@ class Favorites extends React.Component {
         <p className="flex justify-center mb-12 text-purple-800 font-bold text-4xl">
           Suas musicas favoritas:
         </p>
-        {!isLoading ? <LoadingOne /> : (
+        {!isLoading ? <LoadingFour /> : (
           favoriteSongsList.map((cadaMusica) => (
             <MusicCard
               key={ cadaMusica.trackName }

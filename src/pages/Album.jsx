@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
-import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+// import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   state = {
@@ -12,7 +12,7 @@ class Album extends Component {
     artistName: '',
     collectionName: '',
     artworkUrl100: '',
-    favoriteSongsList: [],
+    // favoriteSongsList: [],
   }
 
   // async componentDidMount() {
@@ -36,15 +36,15 @@ class Album extends Component {
       artworkUrl100: musicasRequisitadas[1].artworkUrl100 });
   }
 
-  getFavoriteSongsList = async () => {
-    const favoriteSongsList = await getFavoriteSongs();
-    this.setState({ favoriteSongsList });
-  }
+  // getFavoriteSongsList = async () => {
+  //   const favoriteSongsList = await getFavoriteSongs();
+  //   this.setState({ favoriteSongsList });
+  // }
 
   getListOfSongs = async () => {
     const { match: { params: { id } } } = this.props;
     const pegaMusicas = await getMusics(id);
-    const favoriteSongsList = await getFavoriteSongs();
+    // const favoriteSongsList = await getFavoriteSongs();
     this.setState({
       pegaListaMusicas: pegaMusicas,
       musicaPorId: pegaMusicas.filter((songTrackId) => songTrackId.trackId) },
@@ -53,7 +53,7 @@ class Album extends Component {
 
   render() {
     const { pegaListaMusicas, musicaPorId, artistName,
-      collectionName, artworkUrl100, favoriteSongsList } = this.state;
+      collectionName, artworkUrl100 /* favoriteSongsList */ } = this.state;
     return (
       <div className="bg-violet-100">
         <Header />

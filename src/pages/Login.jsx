@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-max-depth */
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
+import LoadingOne from '../components/LoadingOne';
 import { createUser } from '../services/userAPI';
 
 class Login extends Component {
@@ -10,6 +11,10 @@ class Login extends Component {
     name: '',
     loading: false,
     redirect: false,
+  }
+
+  componentDidMount() {
+    document.title = 'YourMusic';
   }
 
   onInputChange = ({ target }) => {
@@ -44,7 +49,7 @@ class Login extends Component {
     const { isEnterButtonDisabled, name, loading, redirect } = this.state;
 
     if (loading) {
-      return <div>Carregando...</div>;
+      return <LoadingOne />;
     }
     if (redirect) {
       return <Redirect to="/search" />;

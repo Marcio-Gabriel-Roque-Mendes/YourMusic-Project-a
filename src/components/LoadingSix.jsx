@@ -5,7 +5,7 @@ class LoadingSix extends React.Component {
   render() {
     return (
       <div className="loading">
-        <img src={ loadingSixGIF } alt="carregando" className="w-44" />
+        <img src={ loadingSixGIF } alt="carregando" className="w-24" />
       </div>
     );
   }

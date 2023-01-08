@@ -5,7 +5,7 @@ import { Link /* Route */ } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
 // import '../albunsList.css'
-import LoadingThree from '../components/LoadingThree';
+import LoadingFive from '../components/LoadingFive';
 
 const moment = require('moment'); // require moment().format();
 
@@ -133,7 +133,7 @@ class Search extends Component {
     const { isSearchButtonDisabled,
       nameArtist, loading, nomeArtistaPosterior, todasMusicas } = this.state;
 
-    const condicicaoLoading = loading ? <LoadingThree /> : (
+    const condicicaoLoading = loading ? <LoadingFive /> : (
       <form className="flex justify-center mb-2.5 mt-10 text-indigo-800">
         <label htmlFor="nameArtist" className="flex flex-row">
           <div className="text-2xl xl font-bold">
@@ -174,8 +174,7 @@ class Search extends Component {
 
     const condicaoSeRenderizaAlbum = todasMusicas.length === 0
       ? <p className="flex content-center text-indigo-800">
-        Nenhum álbum foi
-        encontrado
+        Nenhum álbum foi encontrado
       </p> : this.estruturarCadaAlbum(todasMusicas);
 
     return (
