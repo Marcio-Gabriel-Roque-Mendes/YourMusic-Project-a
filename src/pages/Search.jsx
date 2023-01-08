@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-closing-tag-location */
+/* eslint-disable react/jsx-wrap-multilines */
 import React, { Component } from 'react';
 import { Link /* Route */ } from 'react-router-dom';
 import Header from '../components/Header';
@@ -103,12 +105,12 @@ class Search extends Component {
         {`$ ${album.collectionPrice}`}
         ,
       </h4>
-      <h4 key={ album.artworkUrl100 }>
+      {/* <h4 key={ album.artworkUrl100 }>
         artworkUrl100:
         {' '}
         {album.artworkUrl100}
         ,
-      </h4>
+      </h4> */}
       <h4 key={ album.releaseDate }>
         Lançado em:
         {' '}
@@ -116,12 +118,12 @@ class Search extends Component {
         {/* {moment(album.releaseDate).format('DD/MM/YYYY')} */}
         ,
       </h4>
-      <h4 key={ album.trackCount }>
+      {/* <h4 key={ album.trackCount }>
         trackCount:
         {' '}
         {album.trackCount}
         ,
-      </h4>
+      </h4> */}
     </div>
 
   ));
@@ -130,10 +132,14 @@ class Search extends Component {
     const { isSearchButtonDisabled,
       nameArtist, loading, nomeArtistaPosterior, todasMusicas } = this.state;
 
-    const condicicaoLoading = loading ? <div>Carregando...</div> : (
-      <form>
-        <label htmlFor="nameArtist">
-          Nome do Artista:
+    const condicicaoLoading = loading ? <div className="bg-violet-100 text-purple-700">
+      Carregando...
+    </div> : (
+      <form className="flex justify-center mb-2.5 mt-5 text-indigo-800">
+        <label htmlFor="nameArtist" className="flex flex-row">
+          <div className="text-2xl">
+            Nome do Artista:
+          </div>
           <input
             id="nameArtist"
             name="nameArtist"
@@ -142,6 +148,7 @@ class Search extends Component {
             maxLength={ 40 }
             onChange={ this.onInputChange }
             value={ nameArtist }
+            className="text-center bg-gray-100 border-2 rounded border-violet-900 ml-2.5"
           />
         </label>
         { ' ' }
@@ -150,6 +157,8 @@ class Search extends Component {
           type="submit"
           onClick={ this.onSearchButtonClick }
           disabled={ isSearchButtonDisabled }
+          className="bg-indigo-700 hover:bg-indigo-500 text-white
+          font-bold py-1 px-4 rounded-full ml-4"
         >
           Pesquisar
         </button>
@@ -157,7 +166,7 @@ class Search extends Component {
     );
 
     const condicaoResultAlbuns = nomeArtistaPosterior.length !== 0 && (
-      <p>
+      <p className="flex justify-center mb-2.5 text-indigo-800">
         Resultado de álbuns de:
         {' '}
         {nomeArtistaPosterior}
@@ -165,16 +174,25 @@ class Search extends Component {
     );
 
     const condicaoSeRenderizaAlbum = todasMusicas.length === 0
-      ? <p>Nenhum álbum foi encontrado</p> : this.estruturarCadaAlbum(todasMusicas);
+      ? <p className="text-indigo-800">
+        Nenhum álbum foi
+        encontrado
+      </p> : this.estruturarCadaAlbum(todasMusicas);
 
     return (
-      <div data-testid="page-search">
+      <div
+        data-testid="page-search"
+        className="flex flex-col flex-wrap content-start bg-violet-100"
+      >
         <Header />
         { condicicaoLoading }
-        {condicaoResultAlbuns}
+        <div>
+          {condicaoResultAlbuns}
+        </div>
         {/* { this.estruturarCadaAlbum(todasMusicas) } */}
-        { condicaoSeRenderizaAlbum }
-
+        <div className="flex flex-row flex-wrap justify-between ml-5 ">
+          { condicaoSeRenderizaAlbum }
+        </div>
       </div>
     );
   }
