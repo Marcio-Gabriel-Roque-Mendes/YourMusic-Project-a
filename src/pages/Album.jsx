@@ -36,6 +36,11 @@ class Album extends Component {
       artworkUrl100: musicasRequisitadas[1].artworkUrl100 });
   }
 
+  getFavoriteSongsList = async () => {
+    const favoriteSongsList = await getFavoriteSongs();
+    this.setState({ favoriteSongsList });
+  }
+
   getListOfSongs = async () => {
     const { match: { params: { id } } } = this.props;
     const pegaMusicas = await getMusics(id);
