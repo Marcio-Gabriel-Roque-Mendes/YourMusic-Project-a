@@ -23,9 +23,22 @@ class Favorites extends React.Component {
   }
 
   render() {
+    const { favoriteSongsList, isLoading } = this.state;
     return (
       <div data-testid="page-favorites">
         <Header />
+        {!isLoading ? <Loading /> : (
+          favoriteSongsList.map((cadaMusica) => (
+            <MusicCard
+              key={ cadaMusica.trackName }
+              trackName={ cadaMusica.trackName }
+              trackId={ cadaMusica.trackId }
+              previewUrl={ cadaMusica.previewUrl }
+              isFavorite
+              getFavoriteSongsList={ this.getFavoriteSongsList }
+            />
+          ))
+        )}
       </div>
     );
   }
