@@ -53,7 +53,7 @@ class Album extends Component {
 
   render() {
     const { pegaListaMusicas, musicaPorId, artistName,
-      collectionName, artworkUrl100 } = this.state;
+      collectionName, artworkUrl100, favoriteSongsList } = this.state;
     return (
       <div className="bg-violet-100">
         <Header />
@@ -77,7 +77,9 @@ class Album extends Component {
                 key={ cadaMusica.trackName }
                 previewUrl={ cadaMusica.previewUrl }
                 trackName={ cadaMusica.trackName }
+                getFavoriteSongsList={ this.getFavoriteSongsList }
                 trackId={ cadaMusica.trackId }
+                musica={ cadaMusica }
               />
             ))}
           </div>
