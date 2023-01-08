@@ -6,20 +6,23 @@ import getMusics from '../services/musicsAPI';
 
 class Album extends Component {
   state = {
-    pegaMusicas: {},
-    qualquer: [],
+    pegaListaMusicas: {},
+    musicaPorId: [],
+    artistName: '',
+    collectionName: '',
+    artworkUrl100: '',
   }
 
-  async componentDidMount() {
-    const { match } = this.props;
-    const { params } = match;
-    const { id } = params;
-    const pegaMusicas = await getMusics(id);
-    this.setState({
-      pegaMusicas: pegaMusicas[0],
-      qualquer: pegaMusicas.filter((songTrackId) => songTrackId.trackId),
-    });
-  }
+  // async componentDidMount() {
+  //   const { match } = this.props;
+  //   const { params } = match;
+  //   const { id } = params;
+  //   const pegaMusicas = await getMusics(id);
+  //   this.setState({
+  //     pegaMusicas: pegaMusicas[0],
+  //     musicaPorId: pegaMusicas.filter((songTrackId) => songTrackId.trackId),
+  //   });
+  // }
 
   render() {
     const { pegaMusicas, qualquer } = this.state;
