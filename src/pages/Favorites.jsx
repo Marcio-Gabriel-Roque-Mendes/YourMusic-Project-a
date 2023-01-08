@@ -30,9 +30,16 @@ class Favorites extends React.Component {
   render() {
     const { favoriteSongsList, isLoading, user } = this.state;
     return (
-      <div data-testid="page-favorites">
+      <div data-testid="page-favorites" className="bg-violet-100">
         <Header />
-        {!isLoading ? <Loading /> : (
+        <p data-testid="header-user-name" className="mb-4 text-fuchsia-800 font-bold bg-violet-100 text-xl">
+          {' '}
+          {`Boas-vindas, ${user}`}
+        </p>
+        <p className="flex justify-center mb-12 text-purple-800 font-bold text-4xl">
+          Suas musicas favoritas:
+        </p>
+        {!isLoading ? <LoadingOne /> : (
           favoriteSongsList.map((cadaMusica) => (
             <MusicCard
               key={ cadaMusica.trackName }
