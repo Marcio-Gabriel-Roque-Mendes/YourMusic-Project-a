@@ -18,64 +18,46 @@ class Header extends Component {
   }
 
   render() {
-    const { /* user */ loading } = this.state;
+    const { loading } = this.state;
 
     if (loading) {
       return <div className="text-indigo-800">Carregando...</div>;
     }
     return (
-      <>
-        <header
-          data-testid="header-component"
-          className="flex flex-row justify-between items-center py-2.5 px-5 bg-gray-300
+      <header
+        data-testid="header-component"
+        className="flex flex-row justify-between items-center py-2.5 px-5 bg-gray-300
           mb-8"
-        >
-          <h1 className="text-6xl my-3 text-purple-800">
-            {/* <img src={imageMusica} alt="Logo de nota musical" />  */}
-            YourMusic
-          </h1>
-          <nav className="text-indigo-900 ">
-            <Link to="/" className="mx-2.5 hover:text-indigo-500 hover:font-bold">
-              Home
-            </Link>
+      >
+        <h1 className="text-6xl my-3 text-purple-800">
+          YourMusic
+        </h1>
+        <nav className="text-indigo-900 ">
+          <Link to="/" className="mx-2.5 hover:text-indigo-500 hover:font-bold">
+            Home
+          </Link>
 
-            {/* <Link
-              to="/profile"
-              data-testid="link-to-profile"
-              className="mx-2.5 hover:text-indigo-500 hover:font-bold"
-            >
-              User
-            </Link> */}
-
+          {' '}
+          <Link
+            to="/search"
+            data-testid="link-to-search"
+            className="mx-2.5 hover:text-indigo-500 hover:font-bold"
+          >
+            Pesquisar
+          </Link>
+          {' '}
+          <Link
+            to="/favorites"
+            data-testid="link-to-favorites"
+            className="mx-2.5 hover:text-indigo-500 hover:font-bold"
+          >
+            Musicas Favoritas
             {' '}
-            <Link
-              to="/search"
-              data-testid="link-to-search"
-              className="mx-2.5 hover:text-indigo-500 hover:font-bold"
-            >
-              Pesquisar
-            </Link>
-            {' '}
-            <Link
-              to="/favorites"
-              data-testid="link-to-favorites"
-              className="mx-2.5 hover:text-indigo-500 hover:font-bold"
-            >
-              Musicas Favoritas
-              {' '}
 
-            </Link>
-          </nav>
+          </Link>
+        </nav>
 
-        </header>
-        <main className="bg-violet-100">
-          {/* <p data-testid="header-user-name" className='my-2.5 text-indigo-800 bg-violet-100'>
-       {' '}
-       {`Boas-vindas, ${user}`}
-     </p> */}
-        </main>
-
-      </>
+      </header>
     );
   }
 }

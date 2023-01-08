@@ -59,7 +59,6 @@ class Login extends Component {
         <section className="flex flex-col items-center justify-center ">
           <header>
             <h1 className="text-6xl my-5 text-purple-800">
-              {/* <img src={imageMusica} alt="Logo de nota musical" />  */}
               YourMusic
             </h1>
             <hr />

@@ -1,13 +1,12 @@
 /* eslint-disable react/jsx-closing-tag-location */
 /* eslint-disable react/jsx-wrap-multilines */
 import React, { Component } from 'react';
-import { Link /* Route */ } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
-// import '../albunsList.css'
 import LoadingFive from '../components/LoadingFive';
 
-const moment = require('moment'); // require moment().format();
+const moment = require('moment');
 
 class Search extends Component {
   state = {
@@ -76,24 +75,14 @@ class Search extends Component {
         {' '}
 
       </Link>
-      {/* <h4 key={ album.artistId }>
-        artistId:
-        {' '}
-        {album.artistId}
-        ,
-      </h4> */}
+
       <h2 key={ album.artistName }>
         Artista:
         {' '}
         {album.artistName}
         ,
       </h2>
-      {/* <h4 key={ album.collectionId }>
-        collectionId:
-        {' '}
-        {album.collectionId}
-        ,
-      </h4> */}
+
       <h2 key={ album.collectionName }>
         Álbum:
         {' '}
@@ -106,12 +95,7 @@ class Search extends Component {
         {`$ ${album.collectionPrice}`}
         ,
       </h4>
-      {/* <h4 key={ album.artworkUrl100 }>
-        artworkUrl100:
-        {' '}
-        {album.artworkUrl100}
-        ,
-      </h4> */}
+
       <h4 key={ album.releaseDate }>
         Lançado em:
         {' '}
@@ -119,12 +103,7 @@ class Search extends Component {
         {/* {moment(album.releaseDate).format('DD/MM/YYYY')} */}
         ,
       </h4>
-      {/* <h4 key={ album.trackCount }>
-        trackCount:
-        {' '}
-        {album.trackCount}
-        ,
-      </h4> */}
+
     </div>
 
   ));
@@ -189,7 +168,6 @@ class Search extends Component {
         <div>
           {condicaoResultAlbuns}
         </div>
-        {/* { this.estruturarCadaAlbum(todasMusicas) } */}
         <div className="flex flex-row flex-wrap justify-between pr-14 pl-14' ">
           { condicaoSeRenderizaAlbum }
         </div>

@@ -12,9 +12,6 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <nav>
-          {/* <Link></Link> */}
-        </nav>
 
         <Switch>
           <Route exact path="/" component={ Login } />
