@@ -98,9 +98,9 @@ class Search extends Component {
         ,
       </h2>
       <h4 key={ album.collectionPrice }>
-        collectionPrice:
+        Preço do Álbum:
         {' '}
-        {album.collectionPrice}
+        {`$ ${album.collectionPrice}`}
         ,
       </h4>
       <h4 key={ album.artworkUrl100 }>
