@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import MusicCard from './MusicCard';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Album extends Component {
   state = {
@@ -11,6 +12,7 @@ class Album extends Component {
     artistName: '',
     collectionName: '',
     artworkUrl100: '',
+    favoriteSongsList: [],
   }
 
   // async componentDidMount() {
