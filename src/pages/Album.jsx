@@ -47,24 +47,33 @@ class Album extends Component {
     const { pegaListaMusicas, musicaPorId, artistName,
       collectionName, artworkUrl100 } = this.state;
     return (
-      <div data-testid="page-album">
+      <div className="bg-violet-100">
         <Header />
-        <p data-testid="artist-name">
-          {' '}
-          {pegaListaMusicas.artistName}
-        </p>
-        <p data-testid="album-name">
-          {' '}
-          {pegaListaMusicas.collectionName}
-        </p>
-        {musicaPorId.map((cadaMusica) => (
-          <MusicCard
-            key={ cadaMusica.trackName }
-            previewUrl={ cadaMusica.previewUrl }
-            trackName={ cadaMusica.trackName }
-            trackId={ cadaMusica.trackId }
-          />
-        ))}
+        <section className="flex justify-center flex-wrap mb-24 bg-violet-100 mt-10">
+          <div className="mr-48 w-60">
+            <img alt="album cover" src={ artworkUrl100 } className="w-52 rounded" />
+            <h3 className="text-fuchsia-800 font-bold text-2xl">{`${collectionName}`}</h3>
+            <p className="text-fuchsia-900">{`Por ${artistName}`}</p>
+          </div>
+          <div data-testid="page-album">
+            <p data-testid="artist-name">
+              {' '}
+              {pegaListaMusicas.artistName}
+            </p>
+            <p data-testid="album-name">
+              {' '}
+              {pegaListaMusicas.collectionName}
+            </p>
+            {musicaPorId.map((cadaMusica) => (
+              <MusicCard
+                key={ cadaMusica.trackName }
+                previewUrl={ cadaMusica.previewUrl }
+                trackName={ cadaMusica.trackName }
+                trackId={ cadaMusica.trackId }
+              />
+            ))}
+          </div>
+        </section>
       </div>
     );
   }
