@@ -53,19 +53,19 @@ class Search extends Component {
   estruturarCadaAlbum = (albuns) => albuns.map((album) => (
     <div
       key={ album.collectionName }
-      className="w-52 text-center content-center border-solid border-4
-      border-black-600 mx-2 my-3 rounded text-fuchsia-900 "
+      className="w-56 text-center content-center border-solid border-1 border-black-600
+      mx-px my-3 rounded text-fuchsia-900 "
     >
+      <img
+        src={ album.artworkUrl100 }
+        alt={ album.artistName }
+        className="w-56 justify-center rounded "
+      />
+
       <Link
         to={ `/album/${album.collectionId}` }
         data-testid={ `link-to-album-${album.collectionId}` }
       >
-        <img
-          src={ album.artworkUrl100 }
-          alt={ album.artistName }
-          className="w-52 rounded"
-        />
-
         <p
           className="bg-indigo-700 hover:bg-indigo-500 text-white
         font-bold py-1 px-1 my-3 rounded-full"
@@ -135,7 +135,7 @@ class Search extends Component {
     const condicicaoLoading = loading ? <div className="bg-violet-100 text-purple-700">
       Carregando...
     </div> : (
-      <form className="flex justify-center mb-2.5 mt-5 text-indigo-800">
+      <form className="flex justify-center mb-2.5 mt-20 text-indigo-800">
         <label htmlFor="nameArtist" className="flex flex-row">
           <div className="text-2xl">
             Nome do Artista:
