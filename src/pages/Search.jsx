@@ -166,7 +166,7 @@ class Search extends Component {
     );
 
     const condicaoResultAlbuns = nomeArtistaPosterior.length !== 0 && (
-      <p className="flex justify-center mb-2.5 text-indigo-800">
+      <p className="flex justify-center mb-20 text-indigo-800">
         Resultado de álbuns de:
         {' '}
         {nomeArtistaPosterior}
@@ -182,7 +182,7 @@ class Search extends Component {
     return (
       <div
         data-testid="page-search"
-        className="flex flex-col flex-wrap content-start bg-violet-100"
+        className="flex flex-col flex-wrap /*content-start*/ bg-violet-100"
       >
         <Header />
         { condicicaoLoading }
@@ -190,7 +190,7 @@ class Search extends Component {
           {condicaoResultAlbuns}
         </div>
         {/* { this.estruturarCadaAlbum(todasMusicas) } */}
-        <div className="flex flex-row flex-wrap justify-between ml-5 ">
+        <div className="flex flex-row flex-wrap justify-between pr-14 pl-14' ">
           { condicaoSeRenderizaAlbum }
         </div>
       </div>
