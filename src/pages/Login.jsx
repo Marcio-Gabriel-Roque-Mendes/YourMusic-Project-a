@@ -49,31 +49,15 @@ class Login extends Component {
     }
     return (
       <div data-testid="page-login">
-        <form>
-          <label htmlFor="name">
-            Nome:
-            <input
-              id="name"
-              name="name"
-              type="text"
-              data-testid="login-name-input"
-              maxLength={ 40 }
-              onChange={ this.onInputChange }
-              value={ name }
-            />
-          </label>
-          <br />
-
-          <button
-            data-testid="login-submit-button"
-            type="submit"
-            onClick={ this.onEnterButtonClick }
-            disabled={ isEnterButtonDisabled }
-          >
-            Entrar
-          </button>
-
-        </form>
+        <section>
+          <header>
+            <h1 className="text-6xl my-5 text-purple-800">
+              {/* <img src={imageMusica} alt="Logo de nota musical" />  */}
+              YourMusic
+            </h1>
+            <hr />
+          </header>
+        </section>
       </div>
     );
   }
