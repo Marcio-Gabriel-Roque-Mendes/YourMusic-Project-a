@@ -65,8 +65,6 @@ class MusicCard extends Component {
     this.setState({ loading: false });
   }
 
-  
-
   render() {
     const { previewUrl, trackName, trackId /* artworkUrl100 */ } = this.props;
     const { loading, favoritesSongs, carregando } = this.state;
@@ -94,9 +92,9 @@ class MusicCard extends Component {
             <input
               type="checkbox"
               name="favorita"
-              checked={ favoritesSongs.some((song) => song.trackId === trackId) }
+              checked={ favoritesSongs.some((song) => song.trackName === trackName) }
               data-testid={ `checkbox-music-${trackId}` }
-              onChange={ this.onListFavoriteChange }
+              onChange={ this.handleChange }
             />
           </label>
         </div>
