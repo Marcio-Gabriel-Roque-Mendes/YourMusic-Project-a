@@ -21,30 +21,51 @@ class MusicCard extends Component {
     });
   }
 
-  onListFavoriteChange = async ({ target }) => {
-    this.setState({ loading: true });
-    const { trackId } = this.props;
-    const { checked } = target;
-    const { favoritesSongs } = this.state;
-    const pegaMusicaFavorita = await getMusics(trackId);
+  // onListFavoriteChange = async ({ target }) => {
+  //   this.setState({ loading: true });
+  //   const { trackId } = this.props;
+  //   const { checked } = target;
+  //   const { favoritesSongs } = this.state;
+  //   const pegaMusicaFavorita = await getMusics(trackId);
 
-    // this.setState({ loading: true });
-    // await addSong({ trackId });
-    // this.setState({ loading: false });
+  //   if (checked) {
+  //     await addSong(pegaMusicaFavorita);
+  //     this.setState({ favoritesSongs: [...favoritesSongs, pegaMusicaFavorita] });
+  //     this.setState({ loading: false });
+  //   }
+  //   if (checked === false) {
+  //     await removeSong(trackId);
+  //     const CurrentFavorites = favoritesSongs
+  //       .filter((musica) => musica.trackId !== trackId);
+  //     this.setState({ favoritesSongs: CurrentFavorites });
+  //     this.setState({ loading: false });
+  //   }
+  // }
 
-    if (checked) {
-      await addSong(pegaMusicaFavorita);
-      this.setState({ favoritesSongs: [...favoritesSongs, pegaMusicaFavorita] });
-      this.setState({ loading: false });
-    }
-    if (checked === false) {
-      await removeSong(trackId);
-      const CurrentFavorites = favoritesSongs
-        .filter((musica) => musica.trackId !== trackId);
-      this.setState({ favoritesSongs: CurrentFavorites });
-      this.setState({ loading: false });
-    }
+  getFavoriteSongsList = async () => {
+    const favoriteSongsList = await getFavoriteSongs();
+    this.setState({ favoritesSongs: favoriteSongsList });
   }
+
+  handleChange = async ({ target }) => {
+    const { checked } = target;
+    const { trackId, getFavoriteSongsList, musica } = this.props;
+    this.setState({
+      loading: true,
+    });
+    if (checked) {
+      await addSong(musica);
+      await this.getFavoriteSongsList();
+    } else {
+      await removeSong({ trackId });
+      if (getFavoriteSongsList) {
+        await getFavoriteSongsList();
+      }
+    }
+    this.setState({ loading: false });
+  }
+
+  
 
   render() {
     const { previewUrl, trackName, trackId /* artworkUrl100 */ } = this.props;
