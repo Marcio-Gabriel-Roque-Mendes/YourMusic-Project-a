@@ -4,7 +4,12 @@ import Loading from '../components/Loadings';
 import MusicCard from './MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
-class Favorites extends Component {
+class Favorites extends React.Component {
+  state = {
+    isLoading: false,
+    favoriteSongsList: [],
+  }
+  
   render() {
     return (
       <div data-testid="page-favorites">
