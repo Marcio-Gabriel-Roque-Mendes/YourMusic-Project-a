@@ -85,14 +85,14 @@ class Search extends Component {
         {album.artistName}
         ,
       </h2>
-      <h4 key={ album.collectionId }>
+      {/* <h4 key={ album.collectionId }>
         collectionId:
         {' '}
         {album.collectionId}
         ,
-      </h4>
+      </h4> */}
       <h2 key={ album.collectionName }>
-        collectionName:
+        Álbum:
         {' '}
         {album.collectionName}
         ,
