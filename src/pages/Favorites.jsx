@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Header from '../components/Header';
+import Loading from '../components/Loadings';
+import MusicCard from './MusicCard';
+import { getFavoriteSongs } from '../services/favoriteSongsAPI';
 
 class Favorites extends Component {
   render() {
