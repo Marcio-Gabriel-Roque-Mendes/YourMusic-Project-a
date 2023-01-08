@@ -28,6 +28,15 @@ class Album extends Component {
     this.getListOfSongs();
   }
 
+  getListOfSongs = async () => {
+    const { match: { params: { id } } } = this.props;
+    const pegaMusicas = await getMusics(id);
+    this.setState({
+      pegaListaMusicas: pegaMusicas,
+      musicaPorId: pegaMusicas.filter((songTrackId) => songTrackId.trackId) },
+    () => this.updateState(pegaMusicas));
+  }
+
   render() {
     const { pegaMusicas, qualquer } = this.state;
     return (
