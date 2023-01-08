@@ -73,14 +73,14 @@ class Search extends Component {
         {' '}
 
       </Link>
-      <h4 key={ album.artistId }>
+      {/* <h4 key={ album.artistId }>
         artistId:
         {' '}
         {album.artistId}
         ,
-      </h4>
+      </h4> */}
       <h2 key={ album.artistName }>
-        artistName:
+        Artista:
         {' '}
         {album.artistName}
         ,
