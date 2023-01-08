@@ -27,21 +27,22 @@ class Header extends Component {
       <>
         <header
           data-testid="header-component"
-          className="flex flex-row justify-between items-center py-2.5 px-5 bg-gray-300"
+          className="flex flex-row justify-between items-center py-2.5 px-5 bg-gray-300
+          mb-8"
         >
           <h1 className="text-6xl my-3 text-purple-800">
             {/* <img src={imageMusica} alt="Logo de nota musical" />  */}
             YourMusic
           </h1>
           <nav className="text-indigo-900 ">
-            {/* <Link to="/">Home </Link> */}
+            {/* <Link to="/">Home </Link>
             <Link
               to="/profile"
               data-testid="link-to-profile"
               className="mx-2.5 hover:text-indigo-500 hover:font-bold"
             >
               User
-            </Link>
+            </Link> */}
             {' '}
             <Link
               to="/search"
