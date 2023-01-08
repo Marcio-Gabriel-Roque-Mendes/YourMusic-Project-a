@@ -44,6 +44,7 @@ class Album extends Component {
   getListOfSongs = async () => {
     const { match: { params: { id } } } = this.props;
     const pegaMusicas = await getMusics(id);
+    const favoriteSongsList = await getFavoriteSongs();
     this.setState({
       pegaListaMusicas: pegaMusicas,
       musicaPorId: pegaMusicas.filter((songTrackId) => songTrackId.trackId) },
