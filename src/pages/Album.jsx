@@ -44,19 +44,20 @@ class Album extends Component {
   }
 
   render() {
-    const { pegaMusicas, qualquer } = this.state;
+    const { pegaListaMusicas, musicaPorId, artistName,
+      collectionName, artworkUrl100 } = this.state;
     return (
       <div data-testid="page-album">
         <Header />
         <p data-testid="artist-name">
           {' '}
-          {pegaMusicas.artistName}
+          {pegaListaMusicas.artistName}
         </p>
         <p data-testid="album-name">
           {' '}
-          {pegaMusicas.collectionName}
+          {pegaListaMusicas.collectionName}
         </p>
-        {qualquer.map((cadaMusica) => (
+        {musicaPorId.map((cadaMusica) => (
           <MusicCard
             key={ cadaMusica.trackName }
             previewUrl={ cadaMusica.previewUrl }
