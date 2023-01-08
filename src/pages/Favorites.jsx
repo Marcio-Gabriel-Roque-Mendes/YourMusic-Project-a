@@ -9,7 +9,19 @@ class Favorites extends React.Component {
     isLoading: false,
     favoriteSongsList: [],
   }
-  
+
+  componentDidMount() {
+    this.getFavoriteSongsList();
+  }
+
+  getFavoriteSongsList = async () => {
+    const favoriteSongsList = await getFavoriteSongs();
+    this.setState({
+      isLoading: true,
+      favoriteSongsList,
+    });
+  }
+
   render() {
     return (
       <div data-testid="page-favorites">
