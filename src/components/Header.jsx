@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getUser } from '../services/userAPI';
+import LoadingSix from './LoadingSix';
 
 class Header extends Component {
   state = {
@@ -21,7 +22,7 @@ class Header extends Component {
     const { loading } = this.state;
 
     if (loading) {
-      return <div className="text-indigo-800">Carregando...</div>;
+      return <LoadingSix />;
     }
     return (
       <header
