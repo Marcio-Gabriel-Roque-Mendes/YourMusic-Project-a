@@ -24,6 +24,10 @@ class Album extends Component {
   //   });
   // }
 
+  componentDidMount() {
+    this.getListOfSongs();
+  }
+
   render() {
     const { pegaMusicas, qualquer } = this.state;
     return (
