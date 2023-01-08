@@ -1,17 +1,22 @@
 import React from 'react';
 import Header from '../components/Header';
-import Loading from '../components/Loadings';
+import LoadingOne from '../components/LoadingOne';
 import MusicCard from './MusicCard';
 import { getFavoriteSongs } from '../services/favoriteSongsAPI';
+import { getUser } from '../services/userAPI';
 
 class Favorites extends React.Component {
   state = {
     isLoading: false,
     favoriteSongsList: [],
+    user: '',
   }
 
   componentDidMount() {
     this.getFavoriteSongsList();
+    getUser().then((response) => this.setState(({
+      user: response.name,
+    })));
   }
 
   getFavoriteSongsList = async () => {
@@ -23,7 +28,7 @@ class Favorites extends React.Component {
   }
 
   render() {
-    const { favoriteSongsList, isLoading } = this.state;
+    const { favoriteSongsList, isLoading, user } = this.state;
     return (
       <div data-testid="page-favorites">
         <Header />
