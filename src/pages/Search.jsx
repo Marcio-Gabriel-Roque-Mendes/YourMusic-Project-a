@@ -173,7 +173,7 @@ class Search extends Component {
     );
 
     const condicaoSeRenderizaAlbum = todasMusicas.length === 0
-      ? <p className="text-indigo-800">
+      ? <p className="flex content-center text-indigo-800">
         Nenhum álbum foi
         encontrado
       </p> : this.estruturarCadaAlbum(todasMusicas);
