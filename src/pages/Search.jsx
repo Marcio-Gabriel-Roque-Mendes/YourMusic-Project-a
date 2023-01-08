@@ -137,7 +137,7 @@ class Search extends Component {
     </div> : (
       <form className="flex justify-center mb-2.5 mt-20 text-indigo-800">
         <label htmlFor="nameArtist" className="flex flex-row">
-          <div className="text-2xl">
+          <div className="text-2xl xl font-bold">
             Nome do Artista:
           </div>
           <input
