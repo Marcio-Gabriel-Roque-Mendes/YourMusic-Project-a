@@ -107,6 +107,8 @@ MusicCard.propTypes = {
   trackName: PropTypes.string.isRequired,
   trackId: PropTypes.string.isRequired,
   // artworkUrl100: PropTypes.string.isRequired,
+  getFavoriteSongsList: PropTypes.func.isRequired,
+  musica: PropTypes.objectOf.isRequired,
 };
 
 export default MusicCard;
