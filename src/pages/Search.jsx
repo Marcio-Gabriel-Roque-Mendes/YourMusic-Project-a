@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -52,16 +51,24 @@ class Search extends Component {
   estruturarCadaAlbum = (albuns) => albuns.map((album) => (
     <div
       key={ album.collectionName }
-      className="w-56 text-center content-center border-solid border-1 border-black-600 mx-px my-3
+      className="w-56 text-center content-center border-solid border-1 border-black-600
+      mx-px my-3
      rounded text-fuchsia-900 "
     >
-      <img src={ album.artworkUrl100 } alt={ album.artistName } className="w-56 justify-center rounded " />
+      <img
+        src={ album.artworkUrl100 }
+        alt={ album.artistName }
+        className="w-56 justify-center rounded "
+      />
 
       <Link
         to={ `/album/${album.collectionId}` }
         data-testid={ `link-to-album-${album.collectionId}` }
       >
-        <p className="bg-indigo-700 hover:bg-indigo-500 text-white font-bold py-1 px-1 my-3 rounded-full">
+        <p
+          className="bg-indigo-700 hover:bg-indigo-500 text-white font-bold py-1 px-1 my-3
+          rounded-full"
+        >
           Musicas
         </p>
         {' '}
@@ -91,8 +98,8 @@ class Search extends Component {
       <h4 key={ album.releaseDate }>
         Lançado em:
         {' '}
+        {/* {new Date(album.releaseDate).getFullYear()} <- Apenas o ano de lançamento  */}
         {moment(album.releaseDate).format('DD/MM/YYYY')}
-        {/* {moment(album.releaseDate).format('DD/MM/YYYY')} */}
         ,
       </h4>
 
@@ -128,7 +135,8 @@ class Search extends Component {
           type="submit"
           onClick={ this.onSearchButtonClick }
           disabled={ isSearchButtonDisabled }
-          className="bg-indigo-700 hover:bg-indigo-500 text-white font-bold py-1 px-4 rounded-full ml-4"
+          className="bg-indigo-700 hover:bg-indigo-500 text-white
+          font-bold py-1 px-4 rounded-full ml-4"
         >
           Pesquisar
         </button>
@@ -144,10 +152,16 @@ class Search extends Component {
     );
 
     const condicaoSeRenderizaAlbum = todasMusicas.length === 0
-      ? <p className="flex content-center text-indigo-800">Nenhum álbum foi encontrado</p> : this.estruturarCadaAlbum(todasMusicas);
+      ? <p className="flex content-center text-indigo-800">Nenhum álbum foi encontrado</p>
+      : this.estruturarCadaAlbum(todasMusicas).sort((a, b) => new Date(b.props.children[5]
+        .key).getFullYear() - new Date(a.props.children[5].key).getFullYear());
+
+    // Referência: https://pt.stackoverflow.com/questions/100068/ordenando-um-array-de-objetos-por-data
+    // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+    // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
 
     return (
-      <div data-testid="page-search" className="flex flex-col flex-wrap /*content-center*/ bg-violet-100">
+      <div data-testid="page-search" className="flex flex-col flex-wrap bg-violet-100">
         <Header />
         { condicicaoLoading }
         <div>
