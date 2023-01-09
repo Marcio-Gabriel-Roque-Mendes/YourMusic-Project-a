@@ -1,13 +1,72 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# YourMusic :musical_note:
+## ✏ Sobre o projeto
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+O objetivo do projeto é desenvolver uma aplicação que simula um streaming de musica, como exemplo o Spotify ou Itunes, essa aplicação consome da API [Itunes Search Api](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html).
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+Esse projeto permite reproduzir prévia de músicas das mais variadas bandas e artistas, e criar uma lista de músicas favoritas, sendo possível adicioná-las ou removê-las dos favoritos na página de músicas favoritas. :headphones:
+
+É possível para usuário dessa aplicação:
+
+* Fazer login;
+* Pesquisar por uma banda ou artista;
+* Ver um conjunto de álbuns disponíveis dessa banda ou artista;
+* Visualizar as músicas de um álbum selecionado;
+* Reproduzir uma prévia das músicas deste álbum;
+* Favoritar e desfavoritar músicas;
+* Ver a lista de músicas favoritas;
+
+## :wrench: Habilidades desenvolvidas:
+* Fazer requisições e consumir dados vindos de uma `API`;
+
+* Utilizar os ciclos de vida de um componente React;
+
+* Utilizar a função `setState` de forma a garantir que um determinado código só é executado após o estado ser atualizado
+  
+* Utilizar o componente `BrowserRouter` corretamente;
+
+* Criar rotas, mapeando o caminho da URL com o componente correspondente, via `Route`;
+
+* Utilizar o `Switch` do `React Router`
+
+* Usar o componente `Redirect` pra redirecionar para uma rota específica;
+
+* Criar links de navegação na aplicação com o componente `Link`;
+
+## :flying_saucer: Principais tecnologias utilizadas: 
+- [JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript);
+- [React.js](https://pt-br.reactjs.org/);
+- [React Router Dom](https://reactrouter.com/en/main)
+- [Moment.js](https://momentjs.com/)
+- [Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+- [Tailwind](https://tailwindcss.com/)
+
+## Como utilizar o projeto na sua máquina
+<strong>1. Deploy:</strong>
+</br>
+https://yourmusic-now.netlify.app/
+
+<strong>2. Faça o git clone na sua máquina e entre no diretório:</strong>
+ - Lembre-se de clonar o repositório no diretório desejado na sua máquina!
+ ```
+  git@github.com:Marcio-Gabriel-Roque-Mendes/YourMusic-Project.git
+  cd YourMusic-Project/
+ ```
+ Instale as dependências
+ - Atente-se para instalar na pasta raiz do projeto
+```
+ npm install
+```
+Inicie a aplicação 
+```
+ npm start
+```
+
+## Prévia da aplicação rodando:
+
+https://user-images.githubusercontent.com/99992471/210630189-6f13fdf5-106d-4815-b10e-c9a1959e4e1f.mp4
+
+## Desenvolvido por: 
+Marcio Gabriel Roque Mendes
+
+### Observações:
+Este projeto foi desenvolvido inspirado no projeto Trybe Tunes proposto no curso de Desenvolvimento Full Stack da [Trybe](https://www.betrybe.com/) no qual os alunos deveriam desenvolve-lo para fins didáticos, os arquivos na pasta src/services são de autoria da Trybe
