@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-closing-tag-location */
-/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
@@ -53,23 +52,16 @@ class Search extends Component {
   estruturarCadaAlbum = (albuns) => albuns.map((album) => (
     <div
       key={ album.collectionName }
-      className="w-56 text-center content-center border-solid border-1 border-black-600
-      mx-px my-3 rounded text-fuchsia-900 "
+      className="w-56 text-center content-center border-solid border-1 border-black-600 mx-px my-3
+     rounded text-fuchsia-900 "
     >
-      <img
-        src={ album.artworkUrl100 }
-        alt={ album.artistName }
-        className="w-56 justify-center rounded "
-      />
+      <img src={ album.artworkUrl100 } alt={ album.artistName } className="w-56 justify-center rounded " />
 
       <Link
         to={ `/album/${album.collectionId}` }
         data-testid={ `link-to-album-${album.collectionId}` }
       >
-        <p
-          className="bg-indigo-700 hover:bg-indigo-500 text-white
-        font-bold py-1 px-1 my-3 rounded-full"
-        >
+        <p className="bg-indigo-700 hover:bg-indigo-500 text-white font-bold py-1 px-1 my-3 rounded-full">
           Musicas
         </p>
         {' '}
@@ -105,7 +97,6 @@ class Search extends Component {
       </h4>
 
     </div>
-
   ));
 
   render() {
@@ -115,7 +106,7 @@ class Search extends Component {
     const condicicaoLoading = loading ? <LoadingFive /> : (
       <form className="flex justify-center mb-2.5 mt-10 text-indigo-800">
         <label htmlFor="nameArtist" className="flex flex-row">
-          <div className="text-2xl xl font-bold">
+          <div className="text-xl font-bold">
             Nome do Artista:
           </div>
           <input
@@ -137,8 +128,7 @@ class Search extends Component {
           type="submit"
           onClick={ this.onSearchButtonClick }
           disabled={ isSearchButtonDisabled }
-          className="bg-indigo-700 hover:bg-indigo-500 text-white
-          font-bold py-1 px-4 rounded-full ml-4"
+          className="bg-indigo-700 hover:bg-indigo-500 text-white font-bold py-1 px-4 rounded-full ml-4"
         >
           Pesquisar
         </button>
@@ -154,23 +144,19 @@ class Search extends Component {
     );
 
     const condicaoSeRenderizaAlbum = todasMusicas.length === 0
-      ? <p className="flex content-center text-indigo-800">
-        Nenhum álbum foi encontrado
-      </p> : this.estruturarCadaAlbum(todasMusicas);
+      ? <p className="flex content-center text-indigo-800">Nenhum álbum foi encontrado</p> : this.estruturarCadaAlbum(todasMusicas);
 
     return (
-      <div
-        data-testid="page-search"
-        className="flex flex-col flex-wrap /*content-start*/ bg-violet-100"
-      >
+      <div data-testid="page-search" className="flex flex-col flex-wrap /*content-center*/ bg-violet-100">
         <Header />
         { condicicaoLoading }
         <div>
           {condicaoResultAlbuns}
         </div>
-        <div className="flex flex-row flex-wrap justify-between pr-14 pl-14' ">
+        <div className="flex flex-row flex-wrap justify-between pr-14 pl-14">
           { condicaoSeRenderizaAlbum }
         </div>
+
       </div>
     );
   }
