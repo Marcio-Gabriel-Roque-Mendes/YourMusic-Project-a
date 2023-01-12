@@ -13,6 +13,7 @@ class Search extends Component {
     loading: false,
     todasMusicas: [],
     nomeArtistaPosterior: '',
+    quantityAlbuns: 24,
   }
 
   onInputChange = ({ target }) => {
