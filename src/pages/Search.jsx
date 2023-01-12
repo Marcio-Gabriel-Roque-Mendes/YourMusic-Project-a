@@ -6,6 +6,8 @@ import LoadingFive from '../components/LoadingFive';
 
 const moment = require('moment');
 
+const numberAlbumsToAdd = 24;
+
 class Search extends Component {
   state = {
     isSearchButtonDisabled: true,
