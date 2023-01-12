@@ -16,6 +16,12 @@ class Search extends Component {
     quantityAlbuns: 24,
   }
 
+  setar = () => {
+    const { quantityAlbuns } = this.state;
+    this.setState({ quantityAlbuns: quantityAlbuns + numberAlbumsToAdd,
+    });
+  }
+
   onInputChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
