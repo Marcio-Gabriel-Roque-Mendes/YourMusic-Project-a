@@ -1,4 +1,4 @@
-const searchAlbumsAPI = async (artist) => {
+const searchAlbumsAPI = async (artist, quantityMoreAlbuns) => {
   const artistNameURL = encodeURI(artist).replaceAll('%20', '+');
 
   const getAlbumsAPI = `https://itunes.apple.com/search?entity=album&term=${artistNameURL}&attribute=allArtistTerm&limit=100`;
