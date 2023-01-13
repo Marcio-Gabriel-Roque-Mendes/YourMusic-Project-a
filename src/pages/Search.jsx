@@ -49,11 +49,11 @@ class Search extends Component {
   }
 
   onSearchButtonClick = async (event) => {
-    const { nameArtist } = this.state;
+    const { nameArtist, quantityAlbuns } = this.state;
     event.preventDefault();
     this.setState({ loading: true }, async () => {
       const nomeDoArtista = nameArtist;
-      const albumProcura = await searchAlbumsAPI(nomeDoArtista);
+      const albumProcura = await searchAlbumsAPI(nomeDoArtista, quantityAlbuns);
       this.setState({
         nameArtist: '',
         loading: false,
