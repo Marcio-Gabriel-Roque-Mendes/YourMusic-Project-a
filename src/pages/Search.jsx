@@ -23,7 +23,9 @@ class Search extends Component {
     event.preventDefault();
     const sumQuantity = quantityAlbuns + numberAlbumsToAdd;
     const theNameOfTheArtist = nameArtistInResults;
-    const requestGettingMoreAlbums = await searchAlbumsAPI(theNameOfTheArtist, sumQuantity);
+    const requestGettingMoreAlbums = await searchAlbumsAPI(
+      theNameOfTheArtist, sumQuantity,
+    );
     this.setState({
       allSongs: requestGettingMoreAlbums,
       quantityAlbuns: sumQuantity,
