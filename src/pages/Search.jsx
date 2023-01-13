@@ -207,7 +207,9 @@ class Search extends Component {
         <div className="flex flex-row flex-wrap justify-between pr-14 pl-14">
           { condicaoSeRenderizaAlbum }
         </div>
-
+        <div>
+          {condicaoSeRenderizaAlbumEntaoMostraBotao}
+        </div>
       </div>
     );
   }
