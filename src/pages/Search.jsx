@@ -13,19 +13,19 @@ class Search extends Component {
     isSearchButtonDisabled: true,
     nameArtist: '',
     loading: false,
-    todasMusicas: [],
-    nomeArtistaPosterior: '',
+    allSongs: [],
+    nameArtistInResults: '',
     quantityAlbuns: 24,
   }
 
   showMoreAlbums = async (event) => {
-    const { nomeArtistaPosterior, quantityAlbuns } = this.state;
+    const { nameArtistInResults, quantityAlbuns } = this.state;
     event.preventDefault();
     const sumQuantity = quantityAlbuns + numberAlbumsToAdd;
-    const nomeDoArtista = nomeArtistaPosterior;
+    const nomeDoArtista = nameArtistInResults;
     const requestGettingMoreAlbums = await searchAlbumsAPI(nomeDoArtista, sumQuantity);
     this.setState({
-      todasMusicas: requestGettingMoreAlbums,
+      allSongs: requestGettingMoreAlbums,
       quantityAlbuns: sumQuantity,
     });
   }
@@ -57,8 +57,8 @@ class Search extends Component {
       this.setState({
         nameArtist: '',
         loading: false,
-        todasMusicas: albumProcura,
-        nomeArtistaPosterior: nomeDoArtista,
+        allSongs: albumProcura,
+        nameArtistInResults: nomeDoArtista,
       });
     });
   }
@@ -123,7 +123,7 @@ class Search extends Component {
 
   render() {
     const { isSearchButtonDisabled,
-      nameArtist, loading, nomeArtistaPosterior, todasMusicas } = this.state;
+      nameArtist, loading, nameArtistInResults, allSongs } = this.state;
 
     const condicicaoLoading = loading ? <LoadingFive /> : (
       <form className="flex justify-center mb-2.5 mt-10 text-indigo-800">
@@ -158,17 +158,17 @@ class Search extends Component {
       </form>
     );
 
-    const condicaoResultAlbuns = nomeArtistaPosterior.length !== 0 && (
+    const condicaoResultAlbuns = nameArtistInResults.length !== 0 && (
       <p className="flex justify-center mb-20 text-indigo-800">
         Resultado de álbuns de:
         {' '}
-        {nomeArtistaPosterior}
+        {nameArtistInResults}
       </p>
     );
 
-    const condicaoSeRenderizaAlbum = todasMusicas.length === 0
+    const condicaoSeRenderizaAlbum = allSongs.length === 0
       ? <p className="flex content-center text-indigo-800">Nenhum álbum foi encontrado</p>
-      : this.estruturarCadaAlbum(todasMusicas).sort((a, b) => new Date(b.props.children[5]
+      : this.estruturarCadaAlbum(allSongs).sort((a, b) => new Date(b.props.children[5]
         .key).getFullYear() - new Date(a.props.children[5].key).getFullYear());
 
     // Referência: https://pt.stackoverflow.com/questions/100068/ordenando-um-array-de-objetos-por-data
