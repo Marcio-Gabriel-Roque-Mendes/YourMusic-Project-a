@@ -22,8 +22,8 @@ class Search extends Component {
     const { nameArtistInResults, quantityAlbuns } = this.state;
     event.preventDefault();
     const sumQuantity = quantityAlbuns + numberAlbumsToAdd;
-    const nomeDoArtista = nameArtistInResults;
-    const requestGettingMoreAlbums = await searchAlbumsAPI(nomeDoArtista, sumQuantity);
+    const theNameOfTheArtist = nameArtistInResults;
+    const requestGettingMoreAlbums = await searchAlbumsAPI(theNameOfTheArtist, sumQuantity);
     this.setState({
       allSongs: requestGettingMoreAlbums,
       quantityAlbuns: sumQuantity,
@@ -52,13 +52,13 @@ class Search extends Component {
     const { nameArtist, quantityAlbuns } = this.state;
     event.preventDefault();
     this.setState({ loading: true }, async () => {
-      const nomeDoArtista = nameArtist;
-      const albumProcura = await searchAlbumsAPI(nomeDoArtista, quantityAlbuns);
+      const theNameOfTheArtist = nameArtist;
+      const albumProcura = await searchAlbumsAPI(theNameOfTheArtist, quantityAlbuns);
       this.setState({
         nameArtist: '',
         loading: false,
         allSongs: albumProcura,
-        nameArtistInResults: nomeDoArtista,
+        nameArtistInResults: theNameOfTheArtist,
       });
     });
   }
