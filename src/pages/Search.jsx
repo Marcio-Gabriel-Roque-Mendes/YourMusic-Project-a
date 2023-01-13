@@ -61,6 +61,7 @@ class Search extends Component {
         loading: false,
         allSongs: albumProcura,
         nameArtistInResults: theNameOfTheArtist,
+        quantityAlbuns: numberAlbumsToAdd,
       });
     });
   }
