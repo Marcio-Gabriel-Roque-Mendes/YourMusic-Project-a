@@ -69,8 +69,8 @@ class Search extends Component {
     <div
       key={ album.collectionName }
       className="w-56 text-center content-center border-solid border-1 border-black-600
-      mx-px my-3
-     rounded text-fuchsia-900 "
+    mx-px my-3
+   rounded text-fuchsia-900 "
     >
       <img
         src={ album.artworkUrl100 }
@@ -176,6 +176,26 @@ class Search extends Component {
     // Referência: https://pt.stackoverflow.com/questions/100068/ordenando-um-array-de-objetos-por-data
     // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
     // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
+
+    const condicaoSeRenderizaAlbumEntaoMostraBotao = todasMusicas.length === 0
+      ? (
+        <p className="text-indigo-100">
+          .
+        </p>
+      )
+      : (
+        <div className="flex justify-center mt-5">
+          <button
+            data-testid="search-artist-button"
+            type="submit"
+            onClick={ this.showMoreAlbums }
+            className="bg-indigo-700 hover:bg-indigo-500 text-white
+      font-bold py-1 px-4 rounded-full ml-4"
+          >
+            Mostra mais albuns
+          </button>
+        </div>
+      );
 
     return (
       <div data-testid="page-search" className="flex flex-col flex-wrap bg-violet-100">
