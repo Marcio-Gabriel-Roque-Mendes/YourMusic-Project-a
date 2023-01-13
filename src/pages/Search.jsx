@@ -177,14 +177,14 @@ class Search extends Component {
     // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
     // Referência: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date/getFullYear
 
-    const condicaoSeRenderizaAlbumEntaoMostraBotao = todasMusicas.length === 0
+    const condicaoSeRenderizaAlbumEntaoMostraBotao = allSongs.length === 0
       ? (
         <p className="text-indigo-100">
           .
         </p>
       )
       : (
-        <div className="flex justify-center mt-5">
+        <div className="flex justify-center text-xl mt-8 mb-10">
           <button
             data-testid="search-artist-button"
             type="submit"
