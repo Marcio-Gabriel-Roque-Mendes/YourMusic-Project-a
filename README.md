@@ -1,7 +1,7 @@
 # YourMusic :musical_note:
 ## ✏ Sobre o projeto
 
-O objetivo do projeto é desenvolver uma aplicação que simula um streaming de musica, como exemplo o Spotify ou Itunes, essa aplicação consome da API [Itunes Search Api](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html).
+O objetivo do projeto é desenvolver uma aplicação que simula um streaming de musica, tendo como exemplo o Spotify ou Itunes, essa aplicação consome da API [Itunes Search Api](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html).
 
 Esse projeto permite reproduzir prévia de músicas das mais variadas bandas e artistas, e criar uma lista de músicas favoritas, sendo possível adicioná-las ou removê-las dos favoritos na página de músicas favoritas. :headphones:
 
