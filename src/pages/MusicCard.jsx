@@ -76,6 +76,18 @@ class MusicCard extends Component {
             />
           </label>
         </div>
+
+        <div className="flex justify-center text-xl mt-8 mb-10">
+          <button
+            data-testid="search-artist-button"
+            type="submit"
+            onClick={ this.showMoreAlbums }
+            className="bg-indigo-700 hover:bg-indigo-500 text-white
+            font-bold py-1 px-4 rounded-full ml-4"
+          >
+            Voltar
+          </button>
+        </div>
       </div>
     );
   }
