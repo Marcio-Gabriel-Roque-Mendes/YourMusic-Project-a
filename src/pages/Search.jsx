@@ -24,6 +24,18 @@ class Search extends Component {
     });
   }
 
+  showMoreAlbums = async (event) => {
+    const { nomeArtistaPosterior, quantityAlbuns } = this.state;
+    event.preventDefault();
+    const sumQuantity = quantityAlbuns + numberAlbumsToAdd;
+    const nomeDoArtista = nomeArtistaPosterior;
+    const requestGettingMoreAlbums = await searchAlbumsAPI(nomeDoArtista, sumQuantity);
+    this.setState({
+      todasMusicas: requestGettingMoreAlbums,
+      quantityAlbuns: sumQuantity,
+    });
+  }
+
   onInputChange = ({ target }) => {
     const { name } = target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
