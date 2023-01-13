@@ -43,7 +43,7 @@ Esse projeto permite reproduzir prévia de músicas das mais variadas bandas e a
 ## Como utilizar o projeto na sua máquina
 <strong>1. Deploy:</strong>
 </br>
-https://yourmusic-now.netlify.app/
+https://yourmusicnow.netlify.app/
 
 <strong>2. Faça o git clone na sua máquina e entre no diretório:</strong>
  - Lembre-se de clonar o repositório no diretório desejado na sua máquina!
