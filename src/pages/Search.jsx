@@ -18,12 +18,6 @@ class Search extends Component {
     quantityAlbuns: 24,
   }
 
-  setar = () => {
-    const { quantityAlbuns } = this.state;
-    this.setState({ quantityAlbuns: quantityAlbuns + numberAlbumsToAdd,
-    });
-  }
-
   showMoreAlbums = async (event) => {
     const { nomeArtistaPosterior, quantityAlbuns } = this.state;
     event.preventDefault();
