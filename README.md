@@ -1,4 +1,8 @@
 # YourMusic :musical_note:
+
+## :clapper: Prévia da aplicação rodando:
+https://user-images.githubusercontent.com/99992471/210630189-6f13fdf5-106d-4815-b10e-c9a1959e4e1f.mp4
+
 ## ✏ Sobre o projeto
 
 O objetivo do projeto é desenvolver uma aplicação que simula um streaming de musica, tendo como exemplo o Spotify ou Itunes, essa aplicação consome da API [Itunes Search Api](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html).
@@ -60,11 +64,6 @@ Inicie a aplicação
 ```
  npm start
 ```
-
-## Prévia da aplicação rodando:
-
-https://user-images.githubusercontent.com/99992471/210630189-6f13fdf5-106d-4815-b10e-c9a1959e4e1f.mp4
-
 ## Desenvolvido por: 
 Marcio Gabriel Roque Mendes
 
